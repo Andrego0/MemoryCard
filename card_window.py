@@ -45,8 +45,20 @@ group_box.setLayout(line2)
 
 answer_btn = QPushButton("Відповісти")
 
+answer_box = QGroupBox("Результат тесту")
+result_lb = QLabel("Правильно")
+right_lb = QLabel("Правильна відповідь")
+
+res_line = QVBoxLayout()
+res_line.addWidget(result_lb, alignment=(Qt.AlignLeft|Qt.AlignTop))
+res_line.addWidget(right_lb, alignment=Qt.AlignCenter, stretch = 2)
+
+answer_box.setLayout(res_line)
+answer_box.hide()
+
 main_line = QVBoxLayout()
 main_line.addLayout(line1, stretch=1)
 main_line.addWidget(question, alignment=Qt.AlignCenter, stretch=2)
 main_line.addWidget(group_box, stretch=8)
+main_line.addWidget(answer_box, stretch=8)
 main_line.addWidget(answer_btn, stretch=3)
