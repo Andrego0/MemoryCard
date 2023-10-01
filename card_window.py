@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QApplication, QRadioButton, QHBoxLayout, QMessageBox
 menu_btn = QPushButton("Меню")
 sleep_btn = QPushButton ("Відпочити")
 time_box = QSpinBox()
-time_box.setValue(30)
+time_box.setValue(3)
 
 time_lb = QLabel("Хвилини")
 
