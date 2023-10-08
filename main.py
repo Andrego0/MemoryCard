@@ -24,6 +24,12 @@ class Question:
     def got_right(self):
         Question.count_ans += 1
         Question.count_right += 1
+        print(Question.count_ans)
+        print(Question.count_right)
+
+    def got_wrong(self):
+        Question.count_ans += 1
+        print(Question.count_right)
  
 q1 = Question('Сонечко','sunny', 'sannyna', 'sonechko', 'son')
 q2 = Question('Кіт', 'cat', 'kat', 'kit', 'kot')
@@ -91,6 +97,31 @@ def menu_show():
     success_lb.setText(f"Успішність: {2/4*100}%")
     menu_win.show()
 
+def menu_hide():
+    menu_win.hide()
+    main_win.show()
+
+def clear():
+    le_quest.clear()
+    le_right_ans.clear()
+    le_wrong1.clear()
+    le_wrong2.clear()
+    le_wrong3.clear()
+
+def add_question():
+    new_q = Question(le_quest.text(),
+                     le_right_ans.text(),
+                     le_wrong1.text(),
+                     le_wrong2.text(),
+                     le_wrong3.text(),
+                     )
+
+    questions.append(new_q)
+    clear()
+
+add_btn.clicked.connect(add_question)
+clear_btn.clicked.connect(clear)
+back_btn.clicked.connect(menu_hide)
 answer_btn.clicked.connect(click_btn)
 sleep_btn.clicked.connect(relax)
 menu_btn.clicked.connect(menu_show)
